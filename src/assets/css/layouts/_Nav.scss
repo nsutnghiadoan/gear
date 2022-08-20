@@ -1,0 +1,50 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 21px rgba(0, 0, 0, 0.15);
+    align-items: center;
+    padding: 16px 63px 16px 37px;
+    @include tablet {
+        padding: 10px 40px 10px 20px;
+    }
+    a {
+        @include desktop {
+            flex-grow: 0.06;
+        }
+        @include tablet {
+            flex-grow: 0.01;
+        }
+        .logo {
+            width: 100%;
+        }
+    }
+    nav {
+        flex-grow: 0.365;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            li {
+                a {
+                    color: #999999;
+                    @include desktop {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                    @include tablet {
+                        font-size: 14px;
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+    }
+    .header_avatar {
+        flex-grow: 0.04;
+        justify-content: space-between;
+        padding: 0;
+    }
+}

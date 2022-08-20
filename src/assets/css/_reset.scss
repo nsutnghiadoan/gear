@@ -1,0 +1,83 @@
+/*
+    common
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,600;1,500&display=swap');
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px;  
+$desktop-min-width: 1023px;  
+
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+     -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    &.hidden {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    -webkit-touch-callout:none;
+}
+ul,ol {
+    list-style: none;
+}
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="url"], select {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0,0.08);
+}
+input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="url"], select, textarea {
+    width: 100%;
+    border-radius: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+button {
+    border: none;
+}
+
+@mixin mobile { @media (max-width: #{$mobile -width - 1px}) {     
+    @content;   
+   } 
+}  
+  
+@mixin tablet { @media (min-width: #{$tablet-width}) and (max-width: $desktop-min-width) {       
+    @content;   
+    } 
+}  
+
+
+@mixin desktop {   @media (min-width: #{$desktop-width}) {     
+    @content;  
+   } 
+}
