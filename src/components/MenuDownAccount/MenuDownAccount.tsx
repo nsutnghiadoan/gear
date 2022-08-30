@@ -10,8 +10,9 @@ interface MenuProps {
     handleClose : () => void;
     accName : string;
 }
-
-export default function MenuDropDown({isLogin, anchorEl , openBool , handleClose, accName} : MenuProps) {
+export default function MenuDownAccount(
+    {isLogin, anchorEl , openBool , handleClose, accName} 
+    : MenuProps) {
   return (
     <>
         {

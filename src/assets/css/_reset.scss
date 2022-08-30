@@ -66,6 +66,22 @@ button {
     border: none;
 }
 
+
+@function get_pc($fsize, $viewport:1920) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vw;
+}
+
+@function get_tablet($fsize, $viewport:1024) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vw;
+}
+
+@function get_sp($fsize, $viewport:428) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vw;
+}
+
 @mixin mobile { @media (max-width: #{$mobile -width - 1px}) {     
     @content;   
    } 
@@ -75,7 +91,6 @@ button {
     @content;   
     } 
 }  
-
 
 @mixin desktop {   @media (min-width: #{$desktop-width}) {     
     @content;  

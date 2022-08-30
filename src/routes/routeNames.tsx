@@ -5,7 +5,9 @@ export const route = {
     finance : '/finance',
     gearWork: {
         index : '/gear-work',
-        aboutUs : '/gear-work/about'
+        aboutUs : '/gear-work/about',
+        qualityCheck : '/gear-work/quality-check',
+        collection : '/gear-work/collection'
     },
     contact: '/contact',
     faq : '/faq',

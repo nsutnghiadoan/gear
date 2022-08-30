@@ -14,6 +14,7 @@ import Blog from "./pages/Blog";
 import Finance from "./pages/Finance";
 import Buy from "./pages/Buy";
 import Contact from "./pages/Contact";
+import Home from "./pages/Home";
 function App() {
   const location = useLocation();
   return (
@@ -21,6 +22,7 @@ function App() {
       <Header />
       <main id="main">
         <Routes location={location}>
+          <Route path={route.home} element={<Home />} />
           <Route path={route.login} element={<Login />} />
           <Route path={route.contact} element={<Contact />} />
           <Route path={route.register} element={<Register />} />

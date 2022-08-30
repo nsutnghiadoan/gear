@@ -1,8 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import { BsChevronDown } from 'react-icons/bs'; 
 import Button from '@mui/material/Button';
-import MenuDropDown from '../MenuDropDown';
 import HeaderAvatar from '../HeaderAvatar';
+import MenuDownAccount from '../MenuDownAccount';
 
 function HeaderAccountAvatar({}) {
   const [isLogin, setIsLogin] = useState(true);
@@ -35,7 +35,7 @@ function HeaderAccountAvatar({}) {
       <HeaderAvatar isLogin={false} srcAvatar='' />
       <BsChevronDown />
     </Button>
-    <MenuDropDown 
+    <MenuDownAccount 
       isLogin={isLogin}
       handleClose={handleClose} 
       anchorEl={anchorEl} 
