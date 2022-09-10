@@ -1,0 +1,44 @@
+.select_box {
+    font-family: sans-serif;
+    background: #f0f0f0;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+    cursor: pointer;
+    &_inner {
+        margin: 0 auto;
+        position: relative;
+    }
+    &_checked {
+        display: flex;
+        align-items: center;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+        background: #ffffff;
+        justify-content: space-between;
+        padding: 16px 12px;
+        @include textSetting(16px, 24px, $clr-select, 400, 0.15px);
+        @include desktop {
+            padding: get_pc(16) get_pc(12);
+            @include textSetting(get_pc(16), get_pc(24), $clr-select, 400, get_pc(0.15));
+        }
+    }
+    .list_select {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        ul {
+            padding: 0;
+            margin: 0;
+            background: #ffffff;
+            li {
+                list-style: none;
+                text-align: left;
+                padding: 16px 12px;
+                 @include textSetting(16px, 24px, $clr-select, 400, 0.15px);
+                @include desktop {
+                    padding: get_pc(16) get_pc(12);
+                    @include textSetting(get_pc(16), get_pc(24), $clr-select, 400, get_pc(0.15));
+                }
+            }
+        }
+    }
+}

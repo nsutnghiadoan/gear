@@ -1,0 +1,56 @@
+
+@mixin bgsetup($bgimage: '', $bgposi: '', $bgsize: '', $bgrepeat: '') {
+    @if $bgimage != '' {
+        background-image: url($bgimage);
+    }
+    @if $bgposi != '' {
+        background-position: $bgposi;
+    }
+    @if $bgsize != '' {
+        background-size: $bgsize;
+    }
+    @if $bgrepeat != '' {
+        background-repeat: $bgrepeat;
+    }@else {
+        background-repeat: no-repeat;
+    }
+}
+
+
+@mixin textSetting($font-size : '' , $line-height : '', $color: '', $font-weight: '' , $letter-spacing: '') {
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
+  }
+
+@function get_pc($fsize, $viewport:1920) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vw;
+}
+
+@function get_tablet($fsize, $viewport:1024) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vw;
+}
+
+@function get_sp($fsize, $viewport:428) {
+    $rate: 100 / $viewport;
+    @return $rate * $fsize * 1vw;
+}
+
+@mixin mobile { @media (max-width: #{$mobile -width - 1px}) {     
+    @content;   
+   } 
+}  
+  
+@mixin tablet { @media (min-width: #{$tablet-width}) and (max-width: $desktop-min-width) {       
+    @content;   
+    } 
+}  
+
+@mixin desktop {   @media (max-width: #{$desktop-large}) {     
+    @content;  
+   } 
+}

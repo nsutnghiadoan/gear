@@ -1,0 +1,77 @@
+#homepage {
+    .quality {
+        .inner {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 160px 0 auto;
+            @include bgsetup('../../images/gear_quality.png',bottom right, 730px 548px);
+            padding-bottom: 120px;
+            @include desktop {
+                padding-bottom: get_pc(120);
+                background-size: get_pc(730) get_pc(548);
+                max-width: get_pc(1400);
+                margin: 0 get_pc(160) 0 auto;
+            }
+            .desp {
+                width: 41.7%;
+                text-align: left;
+                .tlt_section {
+                    margin-bottom: 80px;
+                    @include desktop {
+                        margin-bottom: get_pc(80);
+                    }
+                }
+                p {
+                    @include textSetting(18px, 24px, $clr-desp-banner, 400);
+                    margin-bottom: 32px;
+                    display: flex;
+                    align-items: flex-start;
+                    @include desktop {
+                        margin-bottom: get_pc(32);
+                        @include textSetting(get_pc(18), get_pc(24), $clr-desp-banner, 400);
+                    }
+                    &:before {
+                        content: '';
+                        width: 24px;
+                        height: 24px;
+                        display: block;
+                        margin-right: 12px;
+                        @include bgsetup('../../images/check-square.svg',bottom center, 100% auto);
+                        @include desktop {
+                            margin-right: get_pc(12);
+                            width: get_pc(24);
+                            height: get_pc(24);
+                        }
+                    }
+                }
+            }
+        }    
+    }
+    .people_say {
+        background-color: $clr-bg-icon-reason;
+        @include bgsetup('../../images/bg_feedback.png',left top , contain);
+        .inner {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 120px 0;
+            @include desktop {
+                max-width: get_pc(1200);
+                padding: get_pc(120) 0;
+            }
+            .tlt_section {
+                width: 44%;
+                margin: 0 auto 120px;
+                @include desktop {
+                    margin: 0 auto get_pc(120);
+                }
+                h2 {
+                    margin-bottom: 12px;
+                    @include desktop {
+                        margin-bottom: get_pc(12);
+                    }
+                }
+            }
+        }
+    }
+}

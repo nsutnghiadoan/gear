@@ -7,15 +7,21 @@ interface Item {
 }
 interface ListItem  {
   dropdown : boolean,
-  fields : Item[]
+  fields : Item[],
+  setDrop : (active: boolean) => void;
 }
-export default function HeaderMenuDropDown({ dropdown , fields} : ListItem) {
+export default function HeaderMenuDropDown({setDrop, dropdown , fields} : ListItem) {
   
   return (
     <>
       <ul className={`dropdown ${dropdown ? "show" : ""}`}>
       {fields.map((submenu, index) => (
-        <li key={index} className="menu-items">
+        <li 
+          key={index}
+          className="menu-items"
+          onClick={()=> {
+            setDrop(false);
+          }}>
           <NavLink to={submenu.pathItem}>{submenu.nameItem}</NavLink>
         </li>
       ))}

@@ -1,0 +1,117 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 21px rgba(0, 0, 0, 0.15);
+    padding: 16px 63px 16px 37px;
+    z-index: 99;
+    @include desktop {
+        max-width: get_pc(1920);
+        padding: get_pc(16) get_pc(63) get_pc(16) get_pc(37);
+    }
+    @include tablet {
+        padding: get_tablet(10) get_tablet(40) get_tablet(10) get_tablet(20);
+    }
+    .inner {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        a {
+            @include desktop {
+                flex-grow: 0.06;
+            }
+            @include tablet {
+                flex-grow: 0.01;
+            }
+            .logo {
+                width: 100%;
+            }
+        }
+        nav {
+            flex-grow: 0.365;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                li {
+                    position: relative;
+                    a,button {
+                        color: #999999;
+                        cursor: pointer;
+                        font-size: 18px;
+                        line-height: 24px;
+                        @include desktop {
+                            font-size: get_pc(18);
+                            line-height: get_pc(24);
+                        }
+                        @include tablet {
+                            font-size: get_tablet(14);
+                            line-height: get_tablet(22);
+                        }
+                    }
+                    button {
+                        outline: none;
+                        border: 0;
+                        background-color: unset;
+                        svg {
+                            margin-left: 10px;
+                            @include desktop {
+                                margin-left: get_pc(10);
+                            }
+                        }
+                    }
+                    .dropdown {
+                        display: none;
+                        &.show {
+                            background-color: #fff;
+                            position: absolute;
+                            display: flex;
+                            width: 150px;
+                            left: 0;
+                            justify-content: space-evenly;
+                            align-items: flex-start;
+                            flex-direction: column;
+                            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+                            padding-top: 20px;
+                            @include desktop {
+                                padding-top: get_pc(20);
+                                width: get_pc(150);
+                            }
+                            li {
+                                margin-bottom: 10px;
+                                display: block;
+                                text-align: left;
+                                width: 100%;
+                                @include desktop {
+                                    margin-bottom: get_pc(10);
+                                }
+                                a {
+                                    padding: 20px 20px;
+                                    @include desktop {
+                                        padding: get_pc(20) get_pc(20);
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+        .header_avatar {
+            flex-grow: 0.01;
+            justify-content: space-between;
+            padding: 0;
+            .MuiAvatar-root {
+                width: 48px;
+                height: 48px;
+                @include desktop {
+                    width: get_pc(48);
+                    height: get_pc(48);
+                }
+            }
+        }
+    }
+}

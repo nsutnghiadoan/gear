@@ -15,6 +15,8 @@ import Finance from "./pages/Finance";
 import Buy from "./pages/Buy";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import Collection from "./pages/Collection";
+import QualityCheck from "./pages/QualityCheck";
 function App() {
   const location = useLocation();
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path={route.account} element={<Account />}></Route>
           <Route path={route.gearWork.index} element={<GearWork />}>
             <Route path={route.gearWork.aboutUs} element={<About />} />
+            <Route path={route.gearWork.collection} element={<Collection />} />
+            <Route path={route.gearWork.qualityCheck} element={<QualityCheck />} />
           </Route>
           <Route path={route.finance} element={<Finance />} />
           <Route path={route.sellOrTrade} element={<SellOrTrade />}>
@@ -38,7 +42,7 @@ function App() {
           <Route path={route.faq} element={<FAQ />} />
           <Route path={route.blog} element={<Blog />} />
         </Routes>
-      </main>
+      </main>  
     </>
   );
 }

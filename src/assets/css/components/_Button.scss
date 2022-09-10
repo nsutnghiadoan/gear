@@ -1,0 +1,43 @@
+.btn {
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    @include desktop {
+        border-radius: get_pc(4);
+        padding: get_pc(8) 0;
+    }
+    &.md {
+        @include textSetting(16px, 24px,'', 700);
+        @include desktop {
+            @include textSetting(get_pc(16), get_pc(24),'', 700);
+        }
+    }
+    &.lg {
+        @include textSetting(18px, 40px,'', 700);
+        text-transform: uppercase;
+        @include desktop {
+            @include textSetting(get_pc(18), get_pc(40),'', 700);
+        }
+    }
+    &.red {
+        background-color: $clr-subTitle-red;
+        border: 0;
+        color: $clr-white;
+        &:hover {
+            background-color: transparent;
+            border: 1px solid $clr-border-btn;
+            color: $clr-subTitle-red;
+        }
+    }
+    &.white {
+        background-color: transparent;
+        border: 1px solid $clr-border-btn;
+        outline: none;
+        color: $clr-subTitle-red;
+        &:hover {
+            background-color: $clr-subTitle-red;
+            color: $clr-white;
+        }
+    }
+}

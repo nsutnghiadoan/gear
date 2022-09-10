@@ -1,0 +1,42 @@
+.tlt_section {
+    width: fit-content;
+    &.lg {
+        h2 {
+            @include textSetting(48px, 58px, $clr-tlt-section, 700);
+            @include desktop {
+                @include textSetting(get_pc(48), get_pc(58), $clr-tlt-section, 700);
+            }
+        }
+    }
+    &.sm {
+        h2 {
+            @include textSetting(40px, 48px, $clr-tlt-section, 700);
+            @include desktop {
+                @include textSetting(get_pc(40) , get_pc(48) , $clr-tlt-section, 700);
+            }
+        }
+    }
+    span {
+        display: block;
+    }
+    h3 {
+        &.lg {
+            @include textSetting(24px, 28px, $clr-subTitle-red, 500);
+            @include desktop {
+                @include textSetting(get_pc(24), get_pc(28), $clr-subTitle-red, 500);
+            } 
+        }
+        &.md {
+            @include textSetting(18px, 24px, $clr-subTitle-gray, 500);
+            @include desktop {
+                @include textSetting(get_pc(18), get_pc(24), $clr-subTitle-gray, 500);
+            }
+        }
+        &.sm  {
+            @include textSetting(16px, 24px, $clr-subTitle-gray, 500);
+            @include desktop {
+                @include textSetting(get_pc(16), get_pc(24), $clr-subTitle-gray, 500);
+            }
+        }
+    }
+}

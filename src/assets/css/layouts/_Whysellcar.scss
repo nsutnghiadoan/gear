@@ -1,0 +1,100 @@
+.why_sell {
+    margin-bottom: 160px;
+    @include desktop {
+        margin-bottom: get_pc(160);
+    }
+    .inner {
+        max-width: 1560px;
+        width: 100%;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        @include desktop {
+            max-width: get_pc(1560);
+        }
+        .thumb {
+            width: 51.1%;
+        }
+        .wrapper {
+            width: 44%;
+            .tlt_section {
+                padding-bottom: 20px;
+                position: relative;
+                margin-bottom: 80px;
+                @include desktop {
+                    margin-bottom: get_pc(80);
+                    padding-bottom: get_pc(20);
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 80px;
+                    height: 4px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $clr-subTitle-red;
+                    @include desktop {
+                        width: get_pc(80);
+                        height: get_pc(4);
+                    }
+                }
+            }
+            .list_reason {
+                ul {
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        margin-bottom: 80px;
+                        @include desktop {
+                            margin-bottom: get_pc(80);
+                        }
+                        .thumb_icon {
+                            width: 17.5%;
+                            height: 120px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: $clr-bg-icon-reason;
+                            box-shadow: 0px 51px 60px rgba(0, 0, 0, 0.07), 0px 15.375px 18.0882px rgba(0, 0, 0, 0.0456112), 0px 6.38599px 7.51293px rgba(0, 0, 0, 0.035), 0px 2.30969px 2.71728px rgba(0, 0, 0, 0.0243888);
+                            border-radius: 12px;
+                            border: 3px solid $clr-white;
+                            @include desktop {
+                                height: get_pc(120);
+                                border-radius: get_pc(12);
+                                border: get_pc(3) solid $clr-white;
+                            }
+                            img {
+                                width: 54%;
+                            }
+                        }
+                        .txt {
+                            width: 78.9%;
+                            text-align: left;
+                            h5 {
+                                @include textSetting(18px, 24px, $clr-txt-whysell, 600);
+                                margin-bottom: 8px;
+                                @include desktop {
+                                    margin-bottom: get_pc(8);
+                                    @include textSetting(get_pc(18), get_pc(24), $clr-txt-whysell, 600);
+                                }
+                            }
+                            p {
+                                @include textSetting(16px, 24px, $clr-subTitle-gray, 600);
+                                @include desktop {
+                                    @include textSetting(get_pc(16), get_pc(24), $clr-subTitle-gray, 600);
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            img {
+                                width: 43%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,142 @@
+.banner{
+    &_homepage {
+        
+        margin: 0 auto 245px;
+        @include bgsetup('../../images/banner_red_car.png',center top, 100% auto);
+        @include desktop {
+            margin: 0 auto get_pc(245);
+        }
+        .inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 66px;
+            @include desktop {
+                padding-top: get_pc(66);
+                max-width: get_pc(1200);
+            }
+            .tlt_section {
+                text-align: left;
+                h2,h3 {
+                    margin-bottom: 40px;
+                    @include desktop {
+                        margin-bottom: get_pc(40);
+                    }
+                }
+                h2 {
+                    padding-left: 15px;
+                    position: relative;
+                    @include desktop {
+                        padding-left: get_pc(15);
+                    }
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: 8px;
+                        height: 89%;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: $clr-subTitle-red;
+                        @include desktop {
+                            width: get_pc(8);
+                        }
+                    } 
+                }
+            }
+            .desp {
+                width: 32%;
+                margin-bottom: 58px;
+                @include desktop {
+                    margin-bottom: get_pc(58);
+                }
+                .buy_sell {
+                    display: flex;
+                    justify-content: space-between;
+                    button {
+                        width: 48%;
+                    }
+                }
+            }
+            .search {
+                width: 83%;
+                padding: 32px 52px;
+                margin: 0 auto 140px;
+                display: flex;
+                justify-content: space-between;
+                background-color: $clr-search-wrap;
+                border-radius: 12px;
+                @include desktop {
+                    border-radius: get_pc(12);
+                    margin: 0 auto get_pc(140);
+                    padding: get_pc(32) get_pc(52);
+                }
+                .select_box {
+                    width: 22.9%;
+                }
+                button {
+                    width: 22.9%;
+                }
+            }
+            .introduction {
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    li {
+                        position: relative;
+                        width: 32%;
+                        padding: 41px 23px 21px;
+                        background-color: $clr-white;
+                        box-shadow: 0px 15.375px 18.0882px rgba(0, 0, 0, 0.0456112), 0px 2.30969px 2.71728px rgba(0, 0, 0, 0.0243888);
+                        text-align: left;
+                        display: flex;
+                        flex-direction: column;
+                        align-self: stretch;
+                        justify-content: space-between;
+                        @include desktop {
+                            padding: get_pc(41) get_pc(23) get_pc(21);
+                        }
+                        &::before {
+                            content: '';
+                            background-color: $clr-subTitle-red;
+                            position: absolute;
+                            width: 100%;
+                            height: 12px;
+                            top: 0;
+                            left: 0;
+                            @include desktop {
+                                height: get_pc(12);
+                            }
+                        }
+                        h4 {
+                            @include textSetting(34px, 50px, $clr-order-banner, 400);
+                            @include desktop {
+                                @include textSetting(get_pc(34), get_pc(50), $clr-order-banner, 400);
+                            }
+                        }
+                        h3 {
+                            @include textSetting(32px, 68px, $clr-search-wrap, 700);
+                            margin-bottom: 15px;
+                            @include desktop {
+                                margin-bottom: get_pc(15);
+                                @include textSetting(get_pc(32), get_pc(68), $clr-search-wrap, 700);
+                            }
+                        }
+                        p {
+                            @include textSetting(18px, 24px, $clr-desp-banner, 400);
+                            margin-bottom: 38px;
+                            @include desktop {
+                                margin-bottom: get_pc(38);
+                                @include textSetting(get_pc(18), get_pc(24), $clr-desp-banner, 400);
+                            }
+                        }
+                        .thumb {
+                            width: 100%;
+                            margin-top: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

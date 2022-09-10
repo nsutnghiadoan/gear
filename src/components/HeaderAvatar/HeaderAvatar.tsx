@@ -16,7 +16,6 @@ export default function HeaderAvatar({isLogin, srcAvatar = ''  } : AvatarHeaderP
             <Avatar 
                 src={srcAvatar}
                 alt='avatar'
-                sx={{width : 48, height : 48}}
             /> 
         :
             <Avatar 

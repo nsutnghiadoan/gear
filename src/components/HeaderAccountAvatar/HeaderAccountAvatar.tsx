@@ -4,9 +4,12 @@ import Button from '@mui/material/Button';
 import HeaderAvatar from '../HeaderAvatar';
 import MenuDownAccount from '../MenuDownAccount';
 
-function HeaderAccountAvatar({}) {
-  const [isLogin, setIsLogin] = useState(true);
-  const [infoUser, setInfoUser] = useState({});
+interface Login{ 
+  isLogin : boolean,
+  userName : string
+}
+
+function HeaderAccountAvatar( {isLogin, userName } :Login ) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -15,13 +18,6 @@ function HeaderAccountAvatar({}) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  useEffect(()=>{
-    fetch('https://fakestoreapi.com/users/6')
-      .then(res=>res.json())
-      .then(json=>{
-        setInfoUser(json);
-      })
-  },[isLogin])
   return (
     <>
     <Button 
@@ -40,7 +36,7 @@ function HeaderAccountAvatar({}) {
       handleClose={handleClose} 
       anchorEl={anchorEl} 
       openBool={open}
-      accName={'jkhgkj'}
+      accName={userName}
     />
     </>
   )

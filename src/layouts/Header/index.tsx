@@ -9,71 +9,71 @@ import { howGearWork, More } from '../../components/HeaderMenuDropDown/ListDropD
 import HeaderMenuDropDown from '../../components/HeaderMenuDropDown';
 
 function Header() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [infoUser, setInfoUser] = useState({
+    name : ''
+  })
   const [dropGear, setDropGear] = useState(false);
   const [dropMore, setDropMore] = useState(false);
-  let gearRef = useRef();
-  let moreRef = useRef();
-  // useEffect(() => {
-  //   const handler = (event : EventTarget) => {
-  //    if (dropGear && gearRef.current && ! gearRef.current.contains(event.target)) {
-  //     setDropGear(false);
-  //    }
-  //   };
-  //   document.addEventListener("mousedown", handler );
-  //   document.addEventListener("touchstart", handler);
-  //   return () => {
-  //    document.removeEventListener("mousedown", handler);
-  //    document.removeEventListener("touchstart", handler);
-  //   };
-  //  }, [dropGear, dropMore]);
+  let gearRef = useRef<HTMLLIElement>(null);
+  let moreRef = useRef<HTMLLIElement>(null);
+  useEffect(()=> {
+    fetch('https://jsonplaceholder.typicode.com/users/1')
+    .then(res=> res.json())
+    .then(data => {
+      setInfoUser(data);
+      setIsLogin(true);
+    })
+    .catch(()=> setIsLogin(false))
+  },[isLogin])
   return (
     <header>
-      <NavLink to={route.home}>
-        <div className="logo">
-          <HeaderLogo />
-        </div>
-      </NavLink>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to={route.buy}>Buy</NavLink>
-          </li>
-          <li>
-            <NavLink to={route.sellOrTrade}>Sell or Trade</NavLink>
-          </li>
-          <li>
-            <NavLink to={route.finance}>Finance</NavLink>
-          </li>
-          <li>
-            <button 
-              ref={gearRef.current}
+      <div className="inner">
+        <NavLink to={route.home}>
+          <div className="logo">
+            <HeaderLogo />
+          </div>
+        </NavLink>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to={route.buy}>Buy</NavLink>
+            </li>
+            <li>
+              <NavLink to={route.sellOrTrade}>Sell or Trade</NavLink>
+            </li>
+            <li>
+              <NavLink to={route.finance}>Finance</NavLink>
+            </li>
+            <li ref={gearRef}>
+              <button 
+                onClick={() => {
+                  setDropGear((prev) => !prev);
+                  setDropMore(false);
+                }}
+              >
+                How Gear Work <BsChevronDown/>
+              </button>
+              <HeaderMenuDropDown setDrop={setDropGear} dropdown={dropGear} fields={howGearWork} />
+            </li>
+            <li ref={moreRef}>
+            <button
               onClick={() => {
-                setDropGear((prev) => !prev);
-                setDropMore(false);
+                setDropMore((prev) => !prev);
+                setDropGear(false);
               }}
             >
-              How Gear Work <BsChevronDown/>
+              More <BsChevronDown/>
             </button>
-            <HeaderMenuDropDown dropdown={dropGear} fields={howGearWork} />
-          </li>
-          <li>
-          <button
-            ref={moreRef.current}
-            onClick={() => {
-              setDropMore((prev) => !prev);
-              setDropGear(false);
-            }}
-          >
-            More <BsChevronDown/>
-          </button>
-          <HeaderMenuDropDown dropdown={dropMore} fields={More}/>
-          </li>
-          <li>
-            <NavLink to={route.contact}>Contact us</NavLink>
-          </li>
-        </ul>
-      </nav>
-      <HeaderAccountAvatar />
+            <HeaderMenuDropDown setDrop={setDropMore} dropdown={dropMore} fields={More}/>
+            </li>
+            <li>
+              <NavLink to={route.contact}>Contact us</NavLink>
+            </li>
+          </ul>
+        </nav>
+        <HeaderAccountAvatar isLogin={isLogin} userName={infoUser.name} />
+      </div>
     </header>
   )
 }
