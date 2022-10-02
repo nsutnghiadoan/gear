@@ -1,0 +1,26 @@
+.checkbox_list {
+    display: flex;
+    align-items: center;
+    label {
+        display: flex;
+        input {
+            appearance: none;
+            border: none;
+            &::before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                @include bgsetup("../../images/checkbox_inactive.png",center, contain);
+                display: block;
+            }
+            &:checked {
+                &::before {
+                    @include bgsetup("../../images/checkbox_active.png",center, contain);
+                }
+            }
+        }
+        span {
+
+        }
+    }
+}

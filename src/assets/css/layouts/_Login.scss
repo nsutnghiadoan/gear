@@ -1,0 +1,184 @@
+#login {
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    padding: 173px 0 100px;
+    overflow-y: scroll;
+    overscroll-behavior-y: unset;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s linear;
+    .inner {
+        max-width: 1050px;
+        width: 100%;
+        background-color: $clr-white;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        overscroll-behavior-y: unset;
+        flex-wrap: wrap;
+        .close {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            display: block;
+            right: -15px;
+            margin-left: auto;
+            cursor: pointer;
+            &::before, &::after {
+                content: '';
+                width: 28px;
+                height: 2px;
+                background-color: $clr-desp-banner;
+                top: 0;
+                position: absolute;
+                left: 0;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+        h2 {
+            @include textSetting(24px, 28px, $clr-txt-whysell, 600);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .thumb {
+            width: 406px;
+        }
+        form {
+            flex: 1;
+            padding: 67px 50px;
+            margin-bottom: auto;
+            .input_field {
+                position: relative;
+                margin-bottom: 30px;
+                input {
+                    width: 100%;
+                    padding: 16px 25px;
+                    @include textSetting(20px, 24px, $clr-select, 500);
+                    border: 1px solid rgba(0, 0, 0, 0.23);                    
+                    outline: none;
+                    border-radius: 10px;
+                    &:focus {
+                        ~label {
+                            top: -20px;
+                            left: 20px;
+                            @include textSetting(12px, 15px, $clr-desp-banner, 500);
+                            &::after {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 25px;
+                    padding: 16px 0;
+                    z-index: 9;
+                    @include textSetting(20px, 24px, $clr-select, 500);
+                    pointer-events: none;
+                    transition: .5s;
+                    &::after {
+                        content: '';
+                        width: 102%;
+                        height: 24px;
+                        display: none;
+                        background-color: $clr-white;
+                        top: 5px;
+                        left: 0;
+                        position: absolute;
+                        z-index: -1;
+                    }
+                    &.active {
+                        top: -20px;
+                        left: 20px;
+                        @include textSetting(12px, 15px, $clr-desp-banner, 500);
+                        &::after {
+                            display: block;
+                        }
+                    }
+                }
+                span {
+                    @include textSetting(14px, 16px, $clr-subTitle-red, 500);
+                    display: block;
+                    text-align: left;
+                    margin-top: 10px;
+                }
+            }
+            &.signup {
+                display: none;
+            }
+            a {
+                width: fit-content;
+                margin-left: auto;
+                display: block;
+                margin-bottom: 40px;
+                @include textSetting(16px, 24px, $clr-desp-banner, 400 );
+                text-align: right;
+            }
+            button {
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+            }
+        }
+        p {
+            @include textSetting(16px, 24px, $clr-desp-banner, 400 );
+            text-align: center;
+            position: relative;
+            display: block;
+            margin-bottom: 40px;
+            &::before, &::after {
+                content: '';
+                width: 180px;
+                height: 1px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $clr-desp-banner;
+            }
+            &::before {
+                left: 0;
+            }
+            &::after {
+                right: 0;
+            }
+        }
+        .social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+            a {
+                width: 48px;
+                margin-left: 0;
+                height: 48px;
+                &:first-child {
+                    margin-right: 102px;
+                }
+            }
+        }
+        .no_account {
+            &::after, &::before {
+                display: none;
+            }
+            a {
+                margin: 0;
+                display: inline;
+            }
+        }
+    }
+    &.active {
+        display: block;
+        animation: fadeIn 0.5s linear forwards;
+    }
+}

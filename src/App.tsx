@@ -1,9 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./layouts/Header";
 import { useLocation } from "react-router-dom";
-import {route } from './routes/routeNames';
+import { route } from './routes/routeNames';
 import Account from "./pages/Account";
-import Login from "./pages/Login";
 import Register from "./pages/Register";
 import GearWork from "./pages/GearWork";
 import About from "./pages/About";
@@ -17,15 +16,18 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import QualityCheck from "./pages/QualityCheck";
+import LoginModal from "./components/FormModal";
+import { useState } from "react";
+
 function App() {
   const location = useLocation();
+  const [openModal, setOpenModal] = useState(false);
   return (
     <>
-      <Header />
+      <Header openModal={openModal} setOpenModal={setOpenModal} />
       <main id="main">
         <Routes location={location}>
           <Route path={route.home} element={<Home />} />
-          <Route path={route.login} element={<Login />} />
           <Route path={route.contact} element={<Contact />} />
           <Route path={route.register} element={<Register />} />
           <Route path={route.account} element={<Account />}></Route>
@@ -42,7 +44,8 @@ function App() {
           <Route path={route.faq} element={<FAQ />} />
           <Route path={route.blog} element={<Blog />} />
         </Routes>
-      </main>  
+        <LoginModal openModal={openModal} setOpenModal={setOpenModal} />
+      </main>
     </>
   );
 }

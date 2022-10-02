@@ -45,9 +45,6 @@ export default function MenuDownAccount(
                 }}
                 >
                     <MenuItem onClick={handleClose}>
-                        <NavLink to={route.login}>Login</NavLink>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
                         <NavLink to={route.register}>Register</NavLink>
                     </MenuItem>
                 </Menu>

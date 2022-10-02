@@ -13,7 +13,6 @@ export const route = {
     faq : '/faq',
     support : '/support',
     blog : '/blog',
-    login : '/login',
     register : '/register',
     account : '/account',
 }

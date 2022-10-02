@@ -36,6 +36,7 @@
                         height: 24px;
                         display: block;
                         margin-right: 12px;
+                        flex-shrink: 0;
                         @include bgsetup('../../images/check-square.svg',bottom center, 100% auto);
                         @include desktop {
                             margin-right: get_pc(12);

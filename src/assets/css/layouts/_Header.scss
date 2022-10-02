@@ -37,62 +37,67 @@ header {
                 justify-content: space-between;
                 align-items: center;
                 li {
-                    position: relative;
-                    a,button {
-                        color: #999999;
-                        cursor: pointer;
-                        font-size: 18px;
-                        line-height: 24px;
-                        @include desktop {
-                            font-size: get_pc(18);
-                            line-height: get_pc(24);
-                        }
-                        @include tablet {
-                            font-size: get_tablet(14);
-                            line-height: get_tablet(22);
-                        }
+                    cursor: pointer;
+                    font-size: 18px;
+                    line-height: 24px;
+                    color: #999999;
+                    @include desktop {
+                        font-size: get_pc(18);
+                        line-height: get_pc(24);
                     }
-                    button {
-                        outline: none;
-                        border: 0;
+                    @include tablet {
+                        font-size: get_tablet(14);
+                        line-height: get_tablet(22);
+                    }
+                    a {
+                        color: #999999;
+                    }
+                    &.dropdown {
                         background-color: unset;
+                        display: flex;
+                        align-items: center;
+                        position: relative;
                         svg {
                             margin-left: 10px;
                             @include desktop {
                                 margin-left: get_pc(10);
                             }
                         }
-                    }
-                    .dropdown {
-                        display: none;
-                        &.show {
-                            background-color: #fff;
-                            position: absolute;
-                            display: flex;
-                            width: 150px;
-                            left: 0;
-                            justify-content: space-evenly;
-                            align-items: flex-start;
-                            flex-direction: column;
-                            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-                            padding-top: 20px;
-                            @include desktop {
-                                padding-top: get_pc(20);
-                                width: get_pc(150);
+                        &:hover {
+                            ul {
+                                display: flex;
                             }
-                            li {
-                                margin-bottom: 10px;
-                                display: block;
-                                text-align: left;
-                                width: 100%;
+                        }
+                    }
+                    ul {
+                        display: none;
+                        background-color: #fff;
+                        position: absolute;
+                        width: 150px;
+                        left: 0;
+                        justify-content: space-evenly;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+                        padding-top: 20px;
+                        top: 26px;
+                        @include desktop {
+                            padding-top: get_pc(20);
+                            width: get_pc(150);
+                            top: get_pc(26);
+                        }
+                        li {
+                            margin-bottom: 10px;
+                            display: block;
+                            text-align: left;
+                            width: 100%;
+                            @include desktop {
+                                margin-bottom: get_pc(10);
+                            }
+                            a {
+                                padding: 20px 20px;
                                 @include desktop {
-                                    margin-bottom: get_pc(10);
-                                }
-                                a {
-                                    padding: 20px 20px;
-                                    @include desktop {
-                                        padding: get_pc(20) get_pc(20);
-                                    }
+                                    padding: get_pc(20) get_pc(20);
                                 }
                             }
                         }
@@ -111,6 +116,12 @@ header {
                     width: get_pc(48);
                     height: get_pc(48);
                 }
+            }
+        }
+        button {
+            width: 100px;
+            @include desktop {
+                width: get_pc(100);
             }
         }
     }
