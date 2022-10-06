@@ -27,7 +27,7 @@ function Header({ openModal, setOpenModal }: HeaderProps) {
         <nav>
           <ul>
             <li>
-              <NavLink to={route.buy}>Buy</NavLink>
+              <NavLink to={route.buy.index}>Buy</NavLink>
             </li>
             <li>
               <NavLink to={route.sellOrTrade}>Sell or Trade</NavLink>

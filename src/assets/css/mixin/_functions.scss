@@ -23,7 +23,15 @@
     color: $color;
     font-weight: $font-weight;
     letter-spacing: $letter-spacing;
-  }
+}
+
+@mixin txtClamp($clamp: '') {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $clamp;
+}
+
 
 @function get_pc($fsize, $viewport:1920) {
     $rate: 100 / $viewport;

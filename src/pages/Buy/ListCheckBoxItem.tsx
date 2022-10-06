@@ -6,18 +6,18 @@ export const fuel = [
         nameItem : 'Electronic'
     },
     {
-        nameItem : 'Diesel'
+        nameItem : 'Electric/Gas'
     },
     {
-        nameItem : 'Diesel'
+        nameItem : 'Gasoline'
     },
     {
-        nameItem : 'Diesel'
+        nameItem : 'Hybrid'
     },
     {
-        nameItem : 'Diesel'
+        nameItem : 'Hydrogen'
     },
     {
-        nameItem : 'Diesel'
+        nameItem : 'Plug - In Hybrid'
     },
 ]

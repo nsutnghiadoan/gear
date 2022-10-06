@@ -21,7 +21,7 @@ export default function FormModal({ openModal, setOpenModal }: FormModalProps) {
     });
     const [passwordError, setPasswordError] = useState('');
 
-    const handleBlueInput = (type : string) => {
+    const handleBlurInput = (type : string) => {
         switch(type){
             case "email" :
                 if(email.value == '') {
@@ -56,6 +56,9 @@ export default function FormModal({ openModal, setOpenModal }: FormModalProps) {
         e.preventDefault();
         if(email.valid && password.valid) {
             
+        }else {
+            handleBlurInput('email');
+            handleBlurInput('password');
         }
     }
     return (
@@ -71,7 +74,7 @@ export default function FormModal({ openModal, setOpenModal }: FormModalProps) {
                         <input 
                             type="text" 
                             name="email" 
-                            onBlur={()=>handleBlueInput('email')} 
+                            onBlur={()=>handleBlurInput('email')} 
                             onChange={(e)=> {
                                 if(e.target.value != '') {
                                     setEmailError('');
@@ -89,7 +92,7 @@ export default function FormModal({ openModal, setOpenModal }: FormModalProps) {
                         <input 
                             type="password" 
                             name="password" 
-                            onBlur={()=>handleBlueInput('password')} 
+                            onBlur={()=>handleBlurInput('password')} 
                             onChange={(e)=> {
                                 if(e.target.value != '') {
                                     setPasswordError('');

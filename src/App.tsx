@@ -18,6 +18,7 @@ import Collection from "./pages/Collection";
 import QualityCheck from "./pages/QualityCheck";
 import LoginModal from "./components/FormModal";
 import { useState } from "react";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   const location = useLocation();
@@ -39,7 +40,10 @@ function App() {
           <Route path={route.finance} element={<Finance />} />
           <Route path={route.sellOrTrade} element={<SellOrTrade />}>
           </Route>
-          <Route path={route.buy} element={<Buy />} />
+          <Route path={route.buy.index} element={<Buy />}> 
+            <Route path={route.buy.index} element={<Buy />} /> 
+            <Route path={route.buy.productdetail} element={<ProductDetails />} /> 
+          </Route>
           <Route path={route.support} element={<Support />} />
           <Route path={route.faq} element={<FAQ />} />
           <Route path={route.blog} element={<Blog />} />

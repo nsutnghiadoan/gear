@@ -1,6 +1,9 @@
 export const route = {
     home : '/',
-    buy : '/buy',
+    buy : {
+        index : '/buy',
+        productdetail : '/buy/:productId'
+    },
     sellOrTrade:'/sell-or-trade',
     finance : '/finance',
     gearWork: {

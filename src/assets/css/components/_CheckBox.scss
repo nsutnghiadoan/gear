@@ -1,17 +1,29 @@
 .checkbox_list {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     label {
         display: flex;
+        align-items: center;
+        margin-bottom: 26px;
+        cursor: pointer;
+        @include desktop {
+            margin-bottom: get_pc(26);
+        }
         input {
             appearance: none;
             border: none;
+            margin-right: 15px;
+            @include desktop {
+                margin-right: get_pc(15);
+            }
             &::before {
                 content: '';
                 width: 20px;
                 height: 20px;
                 @include bgsetup("../../images/checkbox_inactive.png",center, contain);
                 display: block;
+                
             }
             &:checked {
                 &::before {

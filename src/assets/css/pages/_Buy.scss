@@ -1,6 +1,178 @@
-#aside {
-    position: fixed;
-    top: 130px;
-    left: 0;
-    
+#buy {
+    #aside {
+        position: fixed;
+        top: 130px;
+        left: 0;
+        width: 460px;
+        @include desktop {
+            top: get_pc(130);
+            width: get_pc(460);
+        }
+        .inner {
+            padding: 0 32px 0 52px;
+            overflow-y: scroll;
+            @include desktop {
+                padding: 0 get_pc(32) 0 get_pc(52);
+            }
+            .result {
+                padding: 16px 24px;
+                margin-bottom: 24px;
+                border-radius: 12px;
+                background-color: $clr-bg-icon-reason;
+                @include desktop {
+                    margin-bottom: get_pc(24);
+                    padding: get_pc(16) get_pc(24);
+                    border-radius: get_pc(12);
+                }
+                .tlt {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 24px;
+                    @include desktop {
+                        margin-bottom: get_pc(24);
+                    }
+                    p {
+                        @include textSetting(18px, 24px, $clr-subTitle-gray, 500);
+                        @include desktop {
+                            @include textSetting(get_pc(18), get_pc(24), $clr-subTitle-gray, 500);
+                        }
+                    }
+                    a {
+                        @include textSetting(16px, 24px, $clr-subTitle-gray, 500);
+                        @include desktop {
+                            @include textSetting(get_pc(16), get_pc(24), $clr-subTitle-gray, 500);
+                        }
+                        &::before {
+                            content: '';
+                            width: 14px;
+                            height: 18px;
+                            display: inline-block;
+                            background-color: red;
+                            margin-right: 12px;
+                            // @include bgsetup("../../images/", center, contain);
+                            @include desktop {
+                                width: get_pc(14);
+                                height: get_pc(18);
+                            }
+                        }
+                    }
+                }
+                h3 {
+                    @include textSetting(24px, 28px, $clr-toggle-title, 600);
+                    @include desktop {
+                        @include textSetting(get_pc(24), get_pc(28), $clr-toggle-title, 600);
+                    }
+                }
+            }
+            .title_toggle {
+                @include textSetting(18px, 28px, $clr-toggle-title, 500);
+                margin-bottom: 16px;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+                @include desktop {
+                    @include textSetting(get_pc(18), get_pc(28), $clr-toggle-title, 500);
+                    margin-bottom: get_pc(16);
+                }
+            }
+        }
+    }
+    #product {
+        max-width: 1460px;
+        width: 100%;
+        padding: 0 52px;
+        margin-left: auto;
+        @include desktop {
+            max-width: get_pc(1460);
+            padding: 0 get_pc(52);
+        }
+        .list_car {
+            ul {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                li {
+                    width: 22.8%;
+                    border: 1.5px solid #E6E6E6;
+                    border-radius: 8px;
+                    padding: 16px;
+                    margin-bottom: 24px;
+                    @include desktop {
+                        border-radius: get_pc(8);
+                        padding: get_pc(16);
+                        margin-bottom: get_pc(24);
+                    }
+                    .thumb {    
+                        width: 100%; 
+                        height: 196px;
+                        margin-bottom: 16px;
+                        @include desktop {
+                            height: get_pc(196);
+                            margin-bottom: get_pc(16);
+                        }
+                        img {
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                    h2 {
+                        text-align: left;
+                        @include textSetting(22px, 28px, $clr-toggle-title , 600);
+                        margin-bottom: 20px;
+                        @include txtClamp(1);
+                        @include desktop {
+                            @include textSetting(get_pc(22), get_pc(28), $clr-toggle-title , 600);
+                            margin-bottom: get_pc(20);
+                        }
+                    }
+                    .kilometer {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 20px;
+                        @include desktop {
+                            margin-bottom: get_pc(20);
+                        }
+                        p {
+                            @include textSetting(16px, 24px, $clr-subTitle-gray, 400);
+                            @include desktop {
+                                @include textSetting(get_pc(16), get_pc(24), $clr-subTitle-gray, 400);
+                            }
+                        }
+                        h5 {
+                            @include textSetting(18px, 24px, $clr-title-kilometer, 700);
+                            @include desktop {
+                                @include textSetting(get_pc(18), get_pc(24), $clr-title-kilometer, 700);
+                            }
+                        }
+
+                    }
+                    .price {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 20px;
+                        @include desktop {
+                            margin-bottom: get_pc(3);
+                        }
+                        h4 {
+                            @include textSetting(24px, 28px, $clr-toggle-title, 600);
+                            @include desktop {
+                                @include textSetting(get_pc(24), get_pc(28), $clr-toggle-title, 600);
+                            }
+                        }
+                        h3 {
+                            @include textSetting(32px, 40px, $clr-search-wrap, 700);
+                            @include desktop {
+                                @include textSetting(get_pc(32), get_pc(40), $clr-search-wrap, 700);
+                            }
+                        }
+                    }
+                    button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }

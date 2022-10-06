@@ -1,6 +1,5 @@
 .banner{
     &_homepage {
-        
         margin: 0 auto 245px;
         @include bgsetup('../../images/banner_red_car.png',center top, 100% auto);
         @include desktop {
@@ -70,8 +69,12 @@
                     margin: 0 auto get_pc(140);
                     padding: get_pc(32) get_pc(52);
                 }
-                .select_box {
+                .MuiFormControl-root  {
                     width: 22.9%;
+                    .MuiSelect-select  {
+                        text-align: left;
+                        background-color: $clr-white;
+                    }
                 }
                 button {
                     width: 22.9%;
