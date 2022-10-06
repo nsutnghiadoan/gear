@@ -19,12 +19,12 @@ export default function CheckBox({ listItem, nameList }: ListCheckBoxProps) {
         //     title : ''
         // })
     }
-    const { v4: uuidv4 } = require('uuid');
+    // const { v4: uuidv4 } = require('uuid');
     return (
         <div className='checkbox_list'>
             {listItem.map((item) => {
                 return (
-                    <label htmlFor={item.nameItem} className="checkbox_item" key={uuidv4()}>
+                    <label htmlFor={item.nameItem} className="checkbox_item" key={item.nameItem}>
                         <input type="checkbox" name={nameList} id={item.nameItem} value={item.nameItem} onChange={handleChange} />
                         <span>{item.nameItem}</span>
                     </label>
