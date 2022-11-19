@@ -22,13 +22,13 @@
                     }
                 }
                 p {
-                    @include textSetting(18px, 24px, $clr-desp-banner, 400);
+                    @include textSetting(18px, 24px, $gray-08, 400);
                     margin-bottom: 32px;
                     display: flex;
                     align-items: flex-start;
                     @include desktop {
                         margin-bottom: get_pc(32);
-                        @include textSetting(get_pc(18), get_pc(24), $clr-desp-banner, 400);
+                        @include textSetting(get_pc(18), get_pc(24), $gray-08, 400);
                     }
                     &:before {
                         content: '';

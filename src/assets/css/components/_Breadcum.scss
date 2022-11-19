@@ -1,0 +1,12 @@
+.breadcum {
+    margin-bottom: 24px;
+    ul {
+        display: flex;
+        align-items: center;
+        li {
+            a {
+                @include textSetting(16px, 24px, $clr-subTitle-gray, 400);
+            }
+        }
+    }
+}

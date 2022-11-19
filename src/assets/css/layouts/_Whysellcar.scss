@@ -59,11 +59,11 @@
                             background-color: $clr-bg-icon-reason;
                             box-shadow: 0px 51px 60px rgba(0, 0, 0, 0.07), 0px 15.375px 18.0882px rgba(0, 0, 0, 0.0456112), 0px 6.38599px 7.51293px rgba(0, 0, 0, 0.035), 0px 2.30969px 2.71728px rgba(0, 0, 0, 0.0243888);
                             border-radius: 12px;
-                            border: 3px solid $clr-white;
+                            border: 3px solid $white;
                             @include desktop {
                                 height: get_pc(120);
                                 border-radius: get_pc(12);
-                                border: get_pc(3) solid $clr-white;
+                                border: get_pc(3) solid $white;
                             }
                             img {
                                 width: 54%;

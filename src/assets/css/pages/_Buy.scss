@@ -4,6 +4,8 @@
         top: 130px;
         left: 0;
         width: 460px;
+        bottom: 0;
+        overflow-y: auto;
         @include desktop {
             top: get_pc(130);
             width: get_pc(460);
@@ -80,11 +82,41 @@
     #product {
         max-width: 1460px;
         width: 100%;
-        padding: 0 52px;
+        padding: 40px 52px 0;
         margin-left: auto;
         @include desktop {
             max-width: get_pc(1460);
-            padding: 0 get_pc(52);
+            padding: get_pc(40) get_pc(52) 0;
+        }
+        .tlt_section {
+            margin-bottom: 24px;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            input {
+                border: 1px solid $gray-03;
+                padding: 15px 12px;
+                border-radius: 5px;
+                width: 71.3%;
+                @include textSetting(16px, 24px, $gray-08, 500);
+                &::placeholder {
+                    color: $gray-03;
+                }
+            }
+            button {
+                padding: 12px 24px;
+                outline: none;
+                background: $white;
+                @include textSetting(18px, 24px, $gray-08, 500);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 4px;
+                border: 1px solid $gray-03;
+            }
         }
         .list_car {
             ul {
