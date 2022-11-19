@@ -6,13 +6,13 @@
         width: 460px;
         bottom: 0;
         overflow-y: auto;
+        overscroll-behavior-y: unset;
         @include desktop {
             top: get_pc(130);
             width: get_pc(460);
         }
         .inner {
             padding: 0 32px 0 52px;
-            overflow-y: scroll;
             @include desktop {
                 padding: 0 get_pc(32) 0 get_pc(52);
             }
