@@ -1,8 +1,8 @@
 #main {
-    padding-top: 80px;
+    padding-top: 75px;
     max-width: 1920px;
     @include desktop {
         max-width: get_pc(1920);
-        padding-top: get_pc(80);
+        padding-top: get_pc(75);
     }
 }

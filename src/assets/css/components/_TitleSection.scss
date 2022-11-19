@@ -2,17 +2,17 @@
     width: fit-content;
     &.lg {
         h2 {
-            @include textSetting(48px, 58px, $clr-tlt-section, 700);
+            @include textSetting(48px, 58px, $light-05, 700);
             @include desktop {
-                @include textSetting(get_pc(48), get_pc(58), $clr-tlt-section, 700);
+                @include textSetting(get_pc(48), get_pc(58), $light-05, 700);
             }
         }
     }
     &.sm {
         h2 {
-            @include textSetting(40px, 48px, $clr-tlt-section, 700);
+            @include textSetting(40px, 48px, $light-05, 700);
             @include desktop {
-                @include textSetting(get_pc(40) , get_pc(48) , $clr-tlt-section, 700);
+                @include textSetting(get_pc(40) , get_pc(48) , $light-05, 700);
             }
         }
     }

@@ -73,7 +73,7 @@
                     width: 22.9%;
                     .MuiSelect-select  {
                         text-align: left;
-                        background-color: $clr-white;
+                        background-color: $white;
                     }
                 }
                 button {
@@ -89,7 +89,7 @@
                         position: relative;
                         width: 32%;
                         padding: 41px 23px 21px;
-                        background-color: $clr-white;
+                        background-color: $white;
                         box-shadow: 0px 15.375px 18.0882px rgba(0, 0, 0, 0.0456112), 0px 2.30969px 2.71728px rgba(0, 0, 0, 0.0243888);
                         text-align: left;
                         display: flex;
@@ -112,9 +112,9 @@
                             }
                         }
                         h4 {
-                            @include textSetting(34px, 50px, $clr-order-banner, 400);
+                            @include textSetting(34px, 50px, $gray-03, 400);
                             @include desktop {
-                                @include textSetting(get_pc(34), get_pc(50), $clr-order-banner, 400);
+                                @include textSetting(get_pc(34), get_pc(50), $gray-03, 400);
                             }
                         }
                         h3 {
@@ -126,11 +126,11 @@
                             }
                         }
                         p {
-                            @include textSetting(18px, 24px, $clr-desp-banner, 400);
+                            @include textSetting(18px, 24px, $gray-08, 400);
                             margin-bottom: 38px;
                             @include desktop {
                                 margin-bottom: get_pc(38);
-                                @include textSetting(get_pc(18), get_pc(24), $clr-desp-banner, 400);
+                                @include textSetting(get_pc(18), get_pc(24), $gray-08, 400);
                             }
                         }
                         .thumb {
